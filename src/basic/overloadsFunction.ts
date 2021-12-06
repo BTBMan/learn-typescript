@@ -1,16 +1,17 @@
 // 函数重载 TODO
 
-function makeDate(timestamp: number): Date;
-function makeDate(m: number, d: number, y: number): Date;
-function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
-  if (d !== undefined && y !== undefined) {
-    return new Date(y, mOrTimestamp, d);
+function Test(name: string): string;
+function Test(gender: string, age: number): string;
+function Test(nameOrGender: string, age?: number): string {
+  if (age) {
+    return `I'm ${age} years old`;
   } else {
-    return new Date(mOrTimestamp);
+    return nameOrGender;
   }
 }
-const d1 = makeDate(12345678);
-const d2 = makeDate(5, 5, 5);
-// const d3 = makeDate(1, 3);
 
-console.log(d2);
+const t1 = Test('john');
+const t2 = Test('man', 18);
+
+console.log(t1);
+console.log(t2);
