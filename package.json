@@ -19,5 +19,8 @@
   "homepage": "https://github.com/BTBMan/learn-typescript#readme",
   "devDependencies": {
     "@type-challenges/utils": "^0.1.1"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }
