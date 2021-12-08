@@ -16,7 +16,7 @@ declare namespace JSX {
     render: any;
   }
 
-  // 类组件的属性
+  // 这里用用指定类的属性对应的类型 要对应到具体实现的组件属性名
   interface ElementAttributesProperty {
     props: any;
   }
