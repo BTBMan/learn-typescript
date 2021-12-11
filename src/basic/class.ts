@@ -106,3 +106,25 @@ interface IC1 {
 class C2 implements IC1 {
   code: string = 'qq';
 }
+
+// 类和类之间的关系
+class C7 {
+  name?: string;
+  age?: number;
+  gender?: string;
+}
+
+class C8 {
+  name?: string;
+  age?: number;
+}
+
+// C7包括C8 所有指定了实例化C8的类型为C7 则不会报错 返回就会报错
+const testC8: C7 = new C8();
+
+// 一个空类是所有类的超类
+class C9 {}
+function fn(con: C9) {}
+
+fn({});
+fn(window);
