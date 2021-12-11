@@ -1,4 +1,4 @@
-// 函数重载 TODO
+// 函数重载
 
 function Test(name: string): string;
 function Test(gender: string, age: number): string;
