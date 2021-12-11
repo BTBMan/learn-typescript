@@ -17,6 +17,9 @@ class Base1<T = string> {
     console.log(111, this.d);
   }
 
+  // contrustor的参数也可以带修饰符
+  constructor(public g?: string) {}
+
   getHeight() {
     console.log(this.height + 'tall');
 
