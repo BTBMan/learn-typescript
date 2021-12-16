@@ -130,3 +130,12 @@ let testCom4 = function <U>(name: U) {};
 // 对于没有指定泛型的具体类型的 会用any代替为指定的类型
 testCom3 = testCom4;
 testCom4 = testCom3;
+
+// topic
+// 任何类型都可以分配给自己
+// any和known是相同的 不同的在于known除了any外不可以分配任何类型
+// known和never是相反的 任何类型都可以分配known never可以分配一切类型 但是没有类型可以分配给never
+// void不可以分配任何类型 并且任何类型也不可以分配给void 当然在一定条件下(strictNullChecks)排除any known never undefined null
+// strictNullChecks关闭 null和undefined类似与never 他们之间可以互相分配
+// strictNullChecks开启 null和undefined类型void 除了any known never undefined void外 不能分配任何类型 任何类型也不可以分配null和undefined
+// undefined总是可以分配给void
