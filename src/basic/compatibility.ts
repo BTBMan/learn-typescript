@@ -31,3 +31,34 @@ let comFn4 = () => ({ name: 'john', age: 18 });
 comFn3 = comFn4;
 // 反之comFn3中缺少类型age 所以comFn3不兼容comFn4
 // comFn4 = comFn3
+
+// function parameter bivariance
+enum EventType {
+  Mouse,
+  Keyboard,
+}
+interface Event {
+  timestamp: number;
+}
+interface MyMouseEvent extends Event {
+  x: number;
+  y: number;
+}
+interface MyKeyEvent extends Event {
+  keyCode: number;
+}
+function listenEvent(eventType: EventType, handler: (n: Event) => void) {
+  /* ... */
+}
+// error 因为这里的MyMouseEvent类型与Event类型不兼容 Event类型缺少了x和y的类型
+// listenEvent(EventType.Mouse, (e: MyMouseEvent) => console.log(e.x + ',' + e.y));
+// ok
+listenEvent(EventType.Mouse, (e: Event) =>
+  console.log((e as MyMouseEvent).x + ',' + (e as MyMouseEvent).y),
+);
+// ok as 操作符强制断言类型
+listenEvent(EventType.Mouse, ((e: MyMouseEvent) => console.log(e.x + ',' + e.y)) as (
+  e: Event,
+) => void);
+// number类型与Event类型不兼容
+// listenEvent(EventType.Mouse, (e: number) => console.log(e));
