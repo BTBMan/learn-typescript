@@ -74,3 +74,23 @@ comFn5([1, 2], (a?, b?, c?) => {});
 
 // 函数重载
 // 函数重载要确保源类型上的每个重载要与目标类型兼容
+
+// 枚举 枚举与数字 数字与枚举都兼容 要建立在相同的枚举下才可以 不同的枚举互不兼容
+enum Enum1 {
+  First,
+  Second,
+}
+
+enum Enum2 {
+  Apple,
+  Banana,
+  pear,
+}
+
+let testEnum1 = Enum1.First;
+
+// ok 相同的枚举
+testEnum1 = Enum1.Second;
+
+// error 不同枚举类型不兼容
+// testEnum1 = Enum2.Apple;
