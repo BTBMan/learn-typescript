@@ -62,3 +62,15 @@ listenEvent(EventType.Mouse, ((e: MyMouseEvent) => console.log(e.x + ',' + e.y))
 ) => void);
 // number类型与Event类型不兼容
 // listenEvent(EventType.Mouse, (e: number) => console.log(e));
+
+// function rest parameter
+function comFn5(arr: number[], cb: (...args: any[]) => void) {}
+
+// ok 类型兼容
+comFn5([1, 2], (a, b, c) => {});
+
+// ok 类型兼容 可选的参数一定要在必选参数的后面
+comFn5([1, 2], (a?, b?, c?) => {});
+
+// 函数重载
+// 函数重载要确保源类型上的每个重载要与目标类型兼容
