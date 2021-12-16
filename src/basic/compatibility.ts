@@ -94,3 +94,39 @@ testEnum1 = Enum1.Second;
 
 // error 不同枚举类型不兼容
 // testEnum1 = Enum2.Apple;
+
+// class 与interface相同 当对比时只对比实例成员 构造函数和和静态成员不影响兼容性 但是类中的私有成员和受保护成员会影响兼容性
+class ComC1 {
+  name!: string;
+  constructor(name: string, age: number) {}
+}
+
+class ComC2 {
+  name!: string;
+  constructor(name: string) {}
+}
+
+let testComC1: ComC1;
+let testComC2: ComC2;
+
+// both ok
+// testComC1 = testComC2
+// testComC2 = testComC1
+
+// 泛型
+interface ComI1<T> {
+  name: T;
+}
+
+let testCom1: ComI1<string>;
+let testCom2: ComI1<number>;
+
+// error testCom2与testCom1类型不兼容 泛型传的类型不同
+// testCom1 = testCom2;
+
+let testCom3 = function <T>(name: T) {};
+let testCom4 = function <U>(name: U) {};
+
+// 对于没有指定泛型的具体类型的 会用any代替为指定的类型
+testCom3 = testCom4;
+testCom4 = testCom3;
