@@ -21,3 +21,5 @@ class C6 extends Base2 {
 // 必须创建一个类去继承抽象类
 const testC6 = new C6();
 testC6.myName();
+
+export {};

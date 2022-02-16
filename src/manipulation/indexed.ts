@@ -14,3 +14,5 @@ type Test2 = Person['name']; // string
 type Tuple = [string, number];
 
 type TupleUnion = Tuple[number];
+
+export {};

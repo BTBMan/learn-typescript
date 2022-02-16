@@ -65,3 +65,5 @@ console.log(tc1.name); // 装饰器里设置了值 则返回装饰器里设置�
 tc1.sayName();
 
 console.log(tc1.myName);
+
+export {};

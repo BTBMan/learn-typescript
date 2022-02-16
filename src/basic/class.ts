@@ -128,3 +128,5 @@ function fn(con: C9) {}
 
 fn({});
 fn(window);
+
+export {};
