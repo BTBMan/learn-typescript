@@ -10,3 +10,5 @@ const test4 = {
   name: 'john',
   age: 18,
 } as const; // 对象和数组的道理相同
+
+export {};

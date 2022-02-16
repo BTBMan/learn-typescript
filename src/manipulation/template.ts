@@ -11,3 +11,5 @@ type Fun = {
 
 type W = 'World';
 type H = `Hello ${W}`;
+
+export {};

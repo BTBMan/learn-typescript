@@ -15,7 +15,7 @@ let test2: Test1<{ age: number }>; // false
 
 type ArrayItem<T> = T extends Array<infer item> ? item : T;
 
-type Test2 = ArrayItem<string>; // 类型string不可赋值给Array类型 所有返回类型本身
+type Test2 = ArrayItem<string>; // 类型string不可赋值给Array类型 所以返回类型本身
 type Test3 = ArrayItem<[string, number, boolean]>; // 可以赋值给Array类型 并返回infer推断出的数组中的每一项类型 string number boolean
 
 // 基于infer实现函数的返回类型
@@ -31,3 +31,5 @@ type ToArrayUnion<T> = [T] extends [any] ? T[] : never;
 
 type Test7 = ToArray<string | number>; // string[] | number[]
 type Test8 = ToArrayUnion<string | number>; // (string | number)[]
+
+export {};

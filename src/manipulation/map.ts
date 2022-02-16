@@ -34,3 +34,5 @@ type Test6<T> = {
 };
 
 type Test7 = Test6<[1, 2, 3]>;
+
+export {};

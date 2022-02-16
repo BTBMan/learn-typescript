@@ -15,3 +15,5 @@ const t2 = Test('man', 18);
 
 console.log(t1);
 console.log(t2);
+
+export {};

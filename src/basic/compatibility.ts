@@ -139,3 +139,5 @@ testCom4 = testCom3;
 // strictNullChecks关闭 null和undefined类似与never 他们之间可以互相分配
 // strictNullChecks开启 null和undefined类型void 除了any known never undefined void外 不能分配任何类型 任何类型也不可以分配null和undefined
 // undefined总是可以分配给void
+
+export {};

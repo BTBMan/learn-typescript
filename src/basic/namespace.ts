@@ -41,3 +41,5 @@ console.log(v1);
 
 const c1 = new C1();
 const c2 = new VC1();
+
+export {};

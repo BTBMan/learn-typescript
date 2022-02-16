@@ -55,3 +55,5 @@ const box = new Box();
 box.value = 'Gameboy';
 
 console.log(box.hasValue());
+
+export {};

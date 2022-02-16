@@ -8,3 +8,5 @@ type Person = {
 type Test1 = keyof Person; // name | age
 
 const test1: Test1 = 'age';
+
+export {};

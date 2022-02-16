@@ -41,3 +41,5 @@ console.log(Ec.B);
 console.log(Ec.C); // 如果当前赋的值是前一个未赋值的枚举应该返回的值 则前一个和当前的值是一样的
 console.log(Ec.D); // 如果当前赋的值和前一个值赋的值是一样的话 则他们的值是一样的
 console.log(Ec.E); // 当前的值仍然是根据前一个值+1
+
+export {};
