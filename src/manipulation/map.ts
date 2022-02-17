@@ -24,10 +24,14 @@ type Test3 = {
 
 type Test4 = [boolean, string];
 
-// 如果遍历的是一个元祖类型 则 P 是 number 类型
 type Test5 = {
-  [P in Test4]: P;
+  [P in keyof Test4]: Test4[P];
 };
+
+// 如果遍历的是一个元祖类型 则得到的是数组的下标以及数组中的方法key
+type Test8 = keyof Test4;
+
+const a: Test8 = 'concat';
 
 type Test6<T> = {
   [P in keyof T]: P;
