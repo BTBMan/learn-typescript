@@ -37,6 +37,33 @@ type Test6<T> = {
   [P in keyof T]: P;
 };
 
+// 如果我们再次遍历我们的keyof Test4, 也就是Test8, 是我们拿到数组中的方法的key
+// 在得到对应key的value类型 以下标为例 key=0 对应的Test["0"] = boolean
+// 所以返回的类型就是 { 0: boolean, 1: string }
+// 这样number为key的也可以用于数组 因为数组就是用下标取值 这和对象用key取值的方式是一样的
+type Test11 = Test4['0']; // boolean
+type Test9 = {
+  [P in Test8]: Test4[P];
+};
+
+const b: Test9 = [true, ''];
+
+type Test10 = keyof Test8;
+
+const c: Test10 = 'toString';
+
+type Test12 = {
+  '0': boolean;
+  '1': string;
+};
+
+const d: Test12 = {
+  0: true,
+  '1': '',
+};
+
+const e: Test12 = [true, ''];
+
 type Test7 = Test6<[1, 2, 3]>;
 
 export {};
