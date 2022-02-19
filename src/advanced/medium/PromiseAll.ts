@@ -37,6 +37,15 @@ type Test3<T> = {
 
 type Test2 = Test3<[1, 2, 3]>;
 
+// 这里的两个参数的类型是不一样的
+// 第一种给定的是元祖行为
+// 第二种给定的是数组行为
+declare function fn1<T extends any[]>(val: [...T]): T;
+declare function fn2<T extends any[]>(val: T): T;
+
+const t1 = fn1([1, 2, 3]);
+const t2 = fn2([1, 2, 3]);
+
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from '@type-challenges/utils';
 
