@@ -66,4 +66,14 @@ const e: Test12 = [true, ''];
 
 type Test7 = Test6<[1, 2, 3]>;
 
+type PartialType = {
+  a?: string;
+};
+
+type RequiredType<T> = {
+  [K in keyof T]-?: T[K]; // -? 使可选变为必选
+};
+
+type RT = RequiredType<PartialType>;
+
 export {};
